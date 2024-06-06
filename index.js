@@ -24,7 +24,11 @@ app.use(flash());
 app.use(fileUpload());
 
 app.set('layout', './layouts/main');
+const path = require('path');
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+
 
 const routes = require('./server/routes/recipeRoutes.js')
 app.use('/', routes);
